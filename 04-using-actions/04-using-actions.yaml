@@ -10,6 +10,12 @@ job:
         uses: actions/checkout@v4
       - name: Printing Folders
         run: ls
+      - name: Setup Node environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: Install the dependencys
+        run: npm ci
     # 0 check out the code from the repository
     # install dependencys of react application
     # exicute automated tests
