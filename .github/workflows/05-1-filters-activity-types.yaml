@@ -1,7 +1,7 @@
 name: 05 - 1- Event Filters & Activity Types
 
 on:
-  pull-request:
+  pull_request:
     types: 
       - opened
       - syncronized
