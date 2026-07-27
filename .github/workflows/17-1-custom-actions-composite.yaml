@@ -1,0 +1,21 @@
+name:
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node and NPM dependencies
+        uses: ./.github/actions/composite-cache-deps
+        with:
+          node-version: 20.x
+          working-dir: 17-custom-actions/react-app
+      - name: test
+        run: npm run test
+        working-directory: 17-custom-actions/react-app
+      - name: Build
+        run: npm run build
+        working-directory: 17-custom-actions/react-app
