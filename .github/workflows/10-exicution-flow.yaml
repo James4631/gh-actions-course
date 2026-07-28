@@ -21,7 +21,7 @@ jobs:
       - name: Runing unit tests
         run: echo "Runing tests..."
       - name: Failing tests
-        if: ${{ !inputs.pass-unit-tests }}
+        if: ${{ !inputs.pass-unit-test }}
         run: exit 1
   deploy-nonprod:
     runs-on: ubuntu-latest
