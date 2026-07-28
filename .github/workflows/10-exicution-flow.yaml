@@ -1,0 +1,10 @@
+name: 10 - Exicution Flows
+
+on:
+  workflow_dispatch:
+jobs:
+  lint-build:
+  unit-test:
+  deploy-nonprod:
+  e2e-tests:
+  deploy-prod:
