@@ -25,6 +25,7 @@ jobs:
           echo "status=${{ steps.build.status }}" >> "$GITHUB_OUTPUT"
           echo "output1=value1" >> "$GITHUB_OUTPUT"
           echo "output2=value2" >> "$GITHUB_OUTPUT"
+          echo "mistake=true" > $GITHUB_OUTPUT
           cat "$GITHUB_OUTPUT"
 
   deploy:
