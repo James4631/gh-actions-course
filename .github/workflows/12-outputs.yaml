@@ -26,5 +26,5 @@ jobs:
     needs: build
     steps:
       - name: deploy
-        if: ${{ needs.build.outputs.build-status }} == success
+        if: ${{ needs.build.outputs.build-status == success }} 
         run: echo "Deploying"
