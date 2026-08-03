@@ -15,7 +15,7 @@ on:
           - 20.x
           - 21.x
         default: 20.x
-        
+
 
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: '20.x' 
+          node-version: ${{ inputs.node-version }}
       - name: install Dependencies
         run: npm ci
       - name: testing
