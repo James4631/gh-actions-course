@@ -7,6 +7,14 @@ on:
         description: Whether to exicute cache steps
         type: boolean
         default: true
+      node-version:
+        description: Node version
+        type: choice 
+        options:
+          - 18.x
+          - 20.x
+          - 21.x
+          
 
 jobs:
   build:
