@@ -13,6 +13,11 @@ async function run() {
     const workingDir = core.getInput('working-directory');
     const debug = core.getBooleanInput('debug');
 
+    const commonExecOpts = {
+        cwd: workingDir
+    }
+    
+    
     core.setSecret(ghToken);
 
     if (!validateBranchName({ branchName: baseBranch})){
@@ -39,8 +44,15 @@ async function run() {
 
     });
     if (gitStatus.stdout > 0) {
-        core.info('[js-dependency-update]: there are updates availible')
+        core.info('[js-dependency-update]: there are updates availible');
+        await exec.exec('git config --global user.name "gh-automation"');
+        await exec.exec('git config --global user.email "gh-automation@email.com"');
+        await exec.exec('git checkout -b ${targetbranch}', {required: true });
+
+        const octokit
+
     } else {
+
         core.info('[js-dependency-update]: no updates at this time')
 
     }
