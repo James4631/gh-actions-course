@@ -6,7 +6,7 @@ on:
       target-directory:
         type: string
         required: true
-    ouputs: 
+    outputs: 
       build-status:
         description: The status of the build process
         value: ${{ jobs.deploy.ouputs.build-status }}
@@ -16,7 +16,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    ouputs:
+    outputs:
       build-status: ${{ steps.build.ouputs.build-status }}
       url: ${{ steps.deploy.outputs.url }}
         
